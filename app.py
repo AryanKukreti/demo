@@ -51,9 +51,6 @@ def submit_contact():
 
     return 'Thank you, we have received your message.', 200
 
-app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'path/to/upload_folder'  # Make sure to set your upload folder path here
-
 if __name__ == '__main__':
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
