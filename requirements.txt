@@ -4,3 +4,4 @@ matplotlib
 Pillow
 networkx
 scipy
+flask
