@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body style="background-color: #282c34; color: white;">
+    <!-- Home Button -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{{ url_for('home') }}" class="home-button">Home</a>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div class="contact-container">
+        <div class="contact-form">
+            <h2>Get in touch</h2>
+            <!-- Formspree form action -->
+            <form action="https://formspree.io/f/mblrepqv" method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Email address" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+        </div>
+        <div class="contact-image">
+            <!-- Using Font Awesome icon for the image -->
+            <i class="far fa-keyboard"></i>
+        </div>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="social-section">
+        <a href="https://www.linkedin.com/in/aryan-kukreti-a58a04229/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon">
+        </a>
+        <a href="https://github.com/AryanKukreti" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="social-icon">
+        </a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Contact me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    </footer>
+</body>
+</html>

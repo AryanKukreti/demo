@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation Path Navigator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact us</a></li>
+            <li><a href="{{ url_for('index') }}" class="btn">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            <h1>Efficient Irrigation Paths for Sustainable Agriculture</h1>
+            <p>Empowering farmers with smart irrigation technology for sustainable practices.</p>
+            <form id="image-form" enctype="multipart/form-data">
+                <input type="file" id="imageInput" accept="image/*">
+                <button type="submit">Upload Your Image</button>
+            </form>
+        </div>
+        <div class="image-preview">
+            <img id="outputImage" src="" alt="Uploaded Image">
+        </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="statistics">
+        <div>
+            <h2>100+ Users Served</h2>
+            <p>Transform images into optimized irrigation layouts swiftly.</p>
+        </div>
+        <div>
+            <h2>5,000+ Images Processed</h2>
+            <p>Discover precision irrigation for better crop yields.</p>
+        </div>
+        <div>
+            <h2>99% Efficiency Rate</h2>
+            <p>Explore automatic irrigation solutions transforming landscapes.</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

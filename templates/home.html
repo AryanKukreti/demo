@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Irrigation Path Navigator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home_style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='path/to/logo.png') }}" alt="Cynic Digital Agency Logo">
+        </div>
+        <nav>
+            <ul>
+                <!-- Updated "Get Started" button link -->
+                <a href="{{ url_for('index') }}" class="btn-quote">Get Started</a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Irrigation Path Navigator</h1>
+        <p>Praesent rhoncus, felis nec accumsan mattis, urna urna laoreet acus vel ultricies.</p>
+        <a href="#about-section" class="btn-primary">About Us</a>
+    </div>
+
+    <!-- About Section -->
+    <section id="about-section" class="about-section">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum 
+            vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Ut fermentum nisi sit amet sodales 
+            facilisis. Nam auctor orci sed fringilla aliquet.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>All rights reserved.</p>
+    </footer>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

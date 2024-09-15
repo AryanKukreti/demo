@@ -1,0 +1,144 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body & Background */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #FF4D6D, #FFB3C1);
+}
+
+/* Home Button */
+.home-button {
+    background-color: #C9184A; /* Dark Pink */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+.home-button:hover {
+    background-color: #A4133C; /* Deep Pink */
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    background-color: #FFF0F3; /* Very Light Pink */
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 900px;
+    height: 400px;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.contact-form h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #590D22; /* Dark Red */
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #800F2F; /* Red */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #FF8FA3; /* Very Light Pink */
+    font-size: 16px;
+}
+
+.submit-btn {
+    background-color: #C9184A; /* Pink */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #A4133C; /* Deep Pink */
+}
+
+/* Contact Image */
+.contact-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-image i {
+    font-size: 100px;
+    color: #555;
+}
+
+/* Social Media Section */
+.social-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.social-section a {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: #FF4D6D; /* Light Pink */
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #FF8FA3; /* Pale Pink */
+}
