@@ -51,8 +51,12 @@ def submit_contact():
 
     return 'Thank you, we have received your message.', 200
 
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'path/to/upload_folder'  # Make sure to set your upload folder path here
+
 if __name__ == '__main__':
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
     
-    app.run(debug=True)
+    # Run the app on all available IP addresses and use the port from the environment variable
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8000)), debug=True)
