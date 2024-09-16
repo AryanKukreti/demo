@@ -1,56 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body style="background-color: #282c34; color: white;">
-    <!-- Home Button -->
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="{{ url_for('home') }}" class="home-button">Home</a>
-    </div>
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    <!-- Contact Form Section -->
-    <div class="contact-container">
-        <div class="contact-form">
-            <h2>Get in touch</h2>
-            <!-- Formspree form action -->
-            <form action="https://formspree.io/f/mblrepqv" method="POST">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Full name" required>
+/* Body & Background */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #F0F4F8, #E0E5E8); /* Soft Gray Gradient */
+}
 
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Email address" required>
+/* Home Button */
+.home-button {
+    background-color: #007BFF; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+.home-button:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
 
-                <button type="submit" class="submit-btn">Send</button>
-            </form>
-        </div>
-        <div class="contact-image">
-            <!-- Using Font Awesome icon for the image -->
-            <i class="far fa-keyboard"></i>
-        </div>
-    </div>
+/* Contact Container */
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Ensure form and image stack vertically on smaller screens */
+    align-items: center;
+    padding: 20px;
+    background-color: #FFFFFF; /* White */
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+}
 
-    <!-- Social Media Section -->
-    <div class="social-section">
-        <a href="https://www.linkedin.com/in/aryan-kukreti-a58a04229/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon">
-        </a>
-        <a href="https://github.com/AryanKukreti" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="social-icon">
-        </a>
-    </div>
+.contact-container > div {
+    width: 100%; /* Ensure elements take full width */
+}
 
-    <!-- Footer Section -->
-    <footer>
-        <p>Contact me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-    </footer>
-</body>
-</html>
+/* Contact Form */
+.contact-form {
+    margin-bottom: 20px;
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333333; /* Dark Gray */
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555555; /* Medium Gray */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #CCCCCC; /* Light Gray */
+    font-size: 16px;
+}
+
+.submit-btn {
+    background-color: #007BFF; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+/* Contact Image */
+.contact-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-image i {
+    font-size: 100px;
+    color: #007BFF; /* Blue for consistency */
+}
+
+/* Social Media Section */
+.social-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly Larger Scale */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: #333333; /* Dark Gray */
+}
+
+footer a {
+    color: #FFFFFF; /* White */
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #CCCCCC; /* Light Gray */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .home-button {
+        font-size: 14px; /* Adjust button font size for smaller screens */
+        padding: 8px 16px; /* Adjust padding */
+    }
+
+    .contact-container {
+        padding: 20px; /* Adjust padding */
+        margin: 20px; /* Adjust margin */
+    }
+
+    .contact-form h2 {
+        font-size: 24px; /* Adjust heading font size */
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 14px; /* Adjust font size for inputs */
+    }
+
+    .submit-btn {
+        font-size: 14px; /* Adjust button font size */
+    }
+
+    .social-icon {
+        width: 30px; /* Adjust icon size */
+        margin: 0 10px; /* Adjust margins */
+    }
+}
+
+@media (max-width: 480px) {
+    .home-button {
+        font-size: 12px; /* Further adjust button font size */
+        padding: 6px 12px; /* Further adjust padding */
+    }
+
+    .contact-image i {
+        font-size: 80px; /* Adjust icon size */
+    }
+
+    .social-icon {
+        width: 25px; /* Adjust icon size */
+        margin: 0 5px; /* Adjust margins */
+    }
+}
