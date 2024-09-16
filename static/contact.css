@@ -1,144 +1,56 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body style="background-color: #282c34; color: white;">
+    <!-- Home Button -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{{ url_for('home') }}" class="home-button">Home</a>
+    </div>
 
-/* Body & Background */
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-    background: linear-gradient(to bottom right, #FF4D6D, #FFB3C1);
-}
+    <!-- Contact Form Section -->
+    <div class="contact-container">
+        <div class="contact-form">
+            <h2>Get in touch</h2>
+            <!-- Formspree form action -->
+            <form action="https://formspree.io/f/mblrepqv" method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Full name" required>
 
-/* Home Button */
-.home-button {
-    background-color: #C9184A; /* Dark Pink */
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 0;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-}
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Email address" required>
 
-.home-button:hover {
-    background-color: #A4133C; /* Deep Pink */
-}
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
 
-/* Contact Container */
-.contact-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 40px;
-    background-color: #FFF0F3; /* Very Light Pink */
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 50px auto;
-    max-width: 900px;
-    height: 400px;
-}
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+        </div>
+        <div class="contact-image">
+            <!-- Using Font Awesome icon for the image -->
+            <i class="far fa-keyboard"></i>
+        </div>
+    </div>
 
-/* Contact Form */
-.contact-form {
-    flex: 1;
-    margin-right: 30px;
-}
+    <!-- Social Media Section -->
+    <div class="social-section">
+        <a href="https://www.linkedin.com/in/aryan-kukreti-a58a04229/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon">
+        </a>
+        <a href="https://github.com/AryanKukreti" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="social-icon">
+        </a>
+    </div>
 
-.contact-form h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: #590D22; /* Dark Red */
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    color: #800F2F; /* Red */
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #FF8FA3; /* Very Light Pink */
-    font-size: 16px;
-}
-
-.submit-btn {
-    background-color: #C9184A; /* Pink */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.submit-btn:hover {
-    background-color: #A4133C; /* Deep Pink */
-}
-
-/* Contact Image */
-.contact-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.contact-image i {
-    font-size: 100px;
-    color: #555;
-}
-
-/* Social Media Section */
-.social-section {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.social-section a {
-    background-color: white;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.social-icon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s;
-}
-
-.social-icon:hover {
-    transform: scale(1.2);
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: white;
-    background-color: #FF4D6D; /* Light Pink */
-}
-
-footer a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-footer a:hover {
-    color: #FF8FA3; /* Pale Pink */
-}
+    <!-- Footer Section -->
+    <footer>
+        <p>Contact me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    </footer>
+</body>
+</html>
