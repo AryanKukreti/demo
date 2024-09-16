@@ -88,7 +88,7 @@ nav ul li {
 
 /* About Section */
 .about-section {
-    padding: 60px 0;
+    padding: 60px 20px; /* Adjust padding for small screens */
     background-color: #f36171;  /* Full-width pink background */
     color: white;
     text-align: center;
@@ -108,6 +108,64 @@ footer {
     padding: 20px;
     background-color: #333;
     color: white;
-    position: absolute;
+    position: relative; /* Changed to relative */
     width: 100%;
+    bottom: 0; /* Ensure footer stays at the bottom */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and navigation on top of each other */
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Space between navigation items */
+    }
+
+    .hero-section h1 {
+        font-size: 36px; /* Adjust font size */
+    }
+
+    .hero-section p {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .btn-primary {
+        padding: 12px 24px; /* Adjust padding */
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .about-section {
+        padding: 40px 20px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 40px; /* Adjust logo size */
+    }
+
+    .hero-section h1 {
+        font-size: 28px; /* Further adjust font size */
+    }
+
+    .hero-section p {
+        font-size: 14px; /* Further adjust font size */
+    }
+
+    .btn-primary {
+        padding: 10px 20px; /* Adjust padding */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .about-section {
+        font-size: 16px; /* Adjust font size */
+    }
 }
