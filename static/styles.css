@@ -1,4 +1,4 @@
-/* Reset default styles */
+/* Reset default styles */ 
 * {
     margin: 0;
     padding: 0;
@@ -25,61 +25,57 @@ nav ul {
     list-style-type: none;
     background-color: rgba(248, 249, 250, 0.8); /* Slight transparency for better readability */
     margin: 0;
-    padding: 20px;
+    padding: 10px; /* Adjusted for better mobile view */
     display: flex;
-    justify-content: space-around;
+    flex-direction: column; /* Stack items vertically on mobile */
 }
 
 nav ul li {
-    display: inline;
+    display: block; /* Full width on mobile */
 }
 
 nav ul li a {
     text-decoration: none;
     color: #000;
     padding: 10px 20px;
-}
-
-.btn {
-    background-color: #004d26;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+    display: block; /* Full width clickable area on mobile */
 }
 
 /* Main Content Container */
 .container {
-    position: absolute;
-    top: 75%; /* 3/4th vertical height */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%);
+    position: relative; /* Changed from absolute */
+    padding: 20px; /* Added padding for better spacing on small screens */
     display: flex;
-    justify-content: space-around;
-    width: 100%; /* Full width */
+    flex-direction: column; /* Stack items vertically on mobile */
     align-items: center;
     color: white;
 }
 
 .content {
-    max-width: 50%;
+    max-width: 100%; /* Full width on mobile */
+    text-align: center; /* Center text on mobile */
 }
 
 .content h1 {
-    font-size: 36px;
+    font-size: 28px; /* Smaller font size for mobile */
 }
 
 .content p {
-    font-size: 18px;
+    font-size: 16px; /* Smaller font size for mobile */
     margin-top: 10px;
 }
 
 form {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Stack inputs and buttons vertically */
+    align-items: center; /* Center align form elements */
 }
 
 form input {
     padding: 10px;
-    margin-right: 10px;
+    margin-bottom: 10px; /* Margin below inputs */
+    width: 100%; /* Full width input */
 }
 
 form button {
@@ -88,32 +84,67 @@ form button {
     color: white;
     border: none;
     cursor: pointer;
+    width: 100%; /* Full width button */
 }
 
 .image-preview img {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 100%; /* Responsive image width */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Statistics Section */
 .statistics {
     background-color: rgba(0, 77, 38, 0.8);
     color: white;
-    padding: 40px 0;
+    padding: 20px 10px; /* Adjusted padding for mobile */
     display: flex;
-    justify-content: space-around;
+    flex-direction: column; /* Stack items vertically on mobile */
     text-align: center;
 }
 
 .statistics div {
-    width: 30%;
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 20px; /* Margin between items */
 }
 
 .statistics h2 {
-    font-size: 24px;
+    font-size: 20px; /* Smaller font size for mobile */
     margin-bottom: 10px;
 }
 
 .statistics p {
-    font-size: 16px;
+    font-size: 14px; /* Smaller font size for mobile */
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    /* Tablet and larger devices */
+    nav ul {
+        flex-direction: row; /* Horizontal layout for larger screens */
+    }
+
+    nav ul li {
+        display: inline; /* Inline items for larger screens */
+    }
+
+    .container {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        flex-direction: row; /* Horizontal layout for larger screens */
+    }
+
+    .content {
+        max-width: 50%; /* Half-width on larger screens */
+    }
+
+    .statistics {
+        flex-direction: row; /* Horizontal layout for larger screens */
+    }
+
+    .statistics div {
+        width: 30%; /* Fixed width for larger screens */
+        margin-bottom: 0; /* Remove margin between items */
+    }
 }
